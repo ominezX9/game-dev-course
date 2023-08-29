@@ -4,5 +4,5 @@
 
 ```Init is where my boiler plate is stored```
 
-```master is allowed chages are put up```
+```master is where allowed chages are put up```
 
