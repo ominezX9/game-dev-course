@@ -6,6 +6,7 @@ function love.load()
     target.y = 300
     target.radius = 50
 
+    -- track these
     score = 0 
     timer = 0
 
@@ -24,7 +25,8 @@ function love.draw()
     love.graphics.circle("fill", target.x, target.y, target.radius)
 
     -- print text and set color to white
-    love.graphics.setColor(1, 1, 1)
+    -- using the mouse : lesson 23
+    love.graphics.setColor(1, 1, 1) -- color white
     love.graphics.setFont(gameFont)
     love.graphics.print(score, 0, 0)
 end
