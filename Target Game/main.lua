@@ -8,7 +8,7 @@ function love.load()
 
     -- track these
     score = 0 
-    timer = 0
+    timer = 10
 
     -- set game font and size
     gameFont = love.graphics.newFont(40)
@@ -44,6 +44,10 @@ function love.mousepressed(x, y, button, istouch, presses )
         local mouseToTarget = distanceBetween(x, y, target.x, target.y)
         if mouseToTarget < target.radius then 
             score = score + 1
+
+            -- change location after click 
+            target.x = math.random(target.radius, love.graphics.getWidth() - target.radius)
+            target.y = math. random(target.radius, love.graphics.getHeight() - target.radius)
         end
     end
     
