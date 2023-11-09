@@ -30,3 +30,16 @@ function love.draw()
     love.graphics.setFont(gameFont)
     love.graphics.print(score, 0, 0)
 end
+
+
+--add mousepressed function: lesson 23
+function love.mousepressed(x, y, button, istouch, presses )
+    -- x -> mouse coordinate x-axis
+    -- y - mouse coprdinate y-axis
+    -- button -> which button is clicked
+    -- istouched, presses -> mobile touch
+
+    if button == 1 then
+        score = score + 1
+    end
+end
