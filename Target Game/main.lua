@@ -37,6 +37,9 @@ function love.update(dt)
 end
 
 function love.draw()
+    --set background
+    love.graphics.draw(sprites.sky, 0, 0)
+
     -- draw target 
     love.graphics.setColor(1,0,0)
     love.graphics.circle("fill", target.x, target.y, target.radius)
