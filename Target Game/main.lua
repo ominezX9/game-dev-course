@@ -16,7 +16,14 @@ function love.load()
 end
 
 function love.update(dt)
-
+    -- introduction to the dt(delta time)
+    if timer > 0 then 
+        timer = timer - dt
+    end
+    
+    if timer < 0 then
+        timer = 0 
+    end
 end
 
 function love.draw()
@@ -29,6 +36,10 @@ function love.draw()
     love.graphics.setColor(1, 1, 1) -- color white
     love.graphics.setFont(gameFont)
     love.graphics.print(score, 0, 0)
+    -- rounding up to the next int -> math.ceil
+    -- rounding down to the next int -> math.floor
+    love.graphics.print(math.ceil(timer), 300, 0) 
+
 end
 
 
