@@ -13,6 +13,16 @@ function love.load()
     -- set game font and size
     gameFont = love.graphics.newFont(40)
 
+    -- setup to import sprites
+    sprites = {}
+    -- load images
+    sprites.sky = love.graphics.newImage('sprites/sky.png')
+    sprites.target = love.graphics.newImage('sprites/target.png')
+    sprites.crosshairs = love.graphics.newImage('sprites/crosshairs.png')
+
+    -- set mouse to be invisible
+    love.mouse.setVisible(false)
+
 end
 
 function love.update(dt)
@@ -20,7 +30,7 @@ function love.update(dt)
     if timer > 0 then 
         timer = timer - dt
     end
-    
+
     if timer < 0 then
         timer = 0 
     end
@@ -40,6 +50,13 @@ function love.draw()
     -- rounding down to the next int -> math.floor
     love.graphics.print(math.ceil(timer), 300, 0) 
 
+    -- draw the sprites
+    -- love.mouse.getX() --> gets the position of the mouse cursor on X axis
+    love.graphics.draw(sprites.crosshairs, love.mouse.getX()-20, love.mouse.getY()-20)
+
+    --drawing the target 
+    -- move to target location.
+    love.graphics.draw(sprites.target, target.x - target.radius, target.y - target.radius)
 end
 
 
