@@ -47,7 +47,9 @@ function love.mousepressed(x, y, button, istouch, presses )
 
             -- change location after click 
             target.x = math.random(target.radius, love.graphics.getWidth() - target.radius)
-            target.y = math. random(target.radius, love.graphics.getHeight() - target.radius)
+            target.y = math.random(target.radius, love.graphics.getHeight() - target.radius)
+            -- basically (50, windowWidth-50)
+            
         end
     end
     
