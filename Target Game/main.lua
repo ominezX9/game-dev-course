@@ -50,13 +50,14 @@ function love.draw()
     -- rounding down to the next int -> math.floor
     love.graphics.print(math.ceil(timer), 300, 0) 
 
+    --drawing the target 
+    -- move to target location.
+    love.graphics.draw(sprites.target, target.x - target.radius, target.y - target.radius)
+
     -- draw the sprites
     -- love.mouse.getX() --> gets the position of the mouse cursor on X axis
     love.graphics.draw(sprites.crosshairs, love.mouse.getX()-20, love.mouse.getY()-20)
 
-    --drawing the target 
-    -- move to target location.
-    love.graphics.draw(sprites.target, target.x - target.radius, target.y - target.radius)
 end
 
 
