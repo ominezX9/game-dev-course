@@ -59,6 +59,8 @@ function love.draw()
 
     -- draw the sprites
     -- love.mouse.getX() --> gets the position of the mouse cursor on X axis
+    -- love.mouse.getY() --> gets the position of the mouse cursor on Y axis
+
     love.graphics.draw(sprites.crosshairs, love.mouse.getX()-20, love.mouse.getY()-20)
 
 end
