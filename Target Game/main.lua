@@ -10,6 +10,10 @@ function love.load()
     score = 0 
     timer = 10
 
+    -- monitoring gameState
+    gameState = 1 -- when gameState set to 1 set at main menu
+
+
     -- set game font and size
     gameFont = love.graphics.newFont(40)
 
@@ -40,9 +44,9 @@ function love.draw()
     --set background
     love.graphics.draw(sprites.sky, 0, 0)
 
-    -- draw target 
-    love.graphics.setColor(1,0,0)
-    love.graphics.circle("fill", target.x, target.y, target.radius)
+    -- -- draw target  --(commented out)
+    -- love.graphics.setColor(1,0,0)
+    -- love.graphics.circle("fill", target.x, target.y, target.radius)
 
     -- print text and set color to white
     -- using the mouse : lesson 23
@@ -53,9 +57,12 @@ function love.draw()
     -- rounding down to the next int -> math.floor
     love.graphics.print(math.ceil(timer), 300, 0) 
 
-    --drawing the target 
-    -- move to target location.
-    love.graphics.draw(sprites.target, target.x - target.radius, target.y - target.radius)
+
+    if gameState == 2 then 
+        --drawing the target 
+        -- move to target location.
+        love.graphics.draw(sprites.target, target.x - target.radius, target.y - target.radius)
+    end
 
     -- draw the sprites
     -- love.mouse.getX() --> gets the position of the mouse cursor on X axis
