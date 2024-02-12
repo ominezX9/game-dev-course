@@ -8,7 +8,7 @@ function love.load()
 
     -- track these
     score = 0 
-    timer = 10
+    timer = 0
 
     -- monitoring gameState
     gameState = 1 -- when gameState set to 1 set at main menu
@@ -37,6 +37,8 @@ function love.update(dt)
 
     if timer < 0 then
         timer = 0 
+        gameState = 1 -- back to main menu
+        score = 0-- reset score to zero
     end
 end
 
@@ -80,7 +82,7 @@ function love.mousepressed(x, y, button, istouch, presses )
     -- button -> which button is clicked
     -- istouched, presses -> mobile touch
 
-    if button == 1 then
+    if button == 1 and gameState == 2 then --- disable click in gameState 2
         -- score = score + 1 -- no yet
         local mouseToTarget = distanceBetween(x, y, target.x, target.y)
         if mouseToTarget < target.radius then 
@@ -92,6 +94,9 @@ function love.mousepressed(x, y, button, istouch, presses )
             -- basically (50, windowWidth-50)
             
         end
+    elseif button == 1 and gameState == 1 then
+        timer = 10 -- onclick set timer to 10
+        gameState = 2 -- enable game
     end
     
 
