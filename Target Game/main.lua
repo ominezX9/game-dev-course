@@ -84,7 +84,7 @@ function love.mousepressed(x, y, button, istouch, presses )
     -- button -> which button is clicked
     -- istouched, presses -> mobile touch
 
-    if button == 1 and gameState == 2 then --- disable click in gameState 2
+    if gameState == 2 then --- disable click in gameState 2
         -- score = score + 1 -- no yet
         local mouseToTarget = distanceBetween(x, y, target.x, target.y)
         if mouseToTarget < target.radius then 
