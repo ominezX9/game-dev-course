@@ -94,7 +94,12 @@ function love.mousepressed(x, y, button, istouch, presses )
             target.x = math.random(target.radius, love.graphics.getWidth() - target.radius)
             target.y = math.random(target.radius, love.graphics.getHeight() - target.radius)
             -- basically (50, windowWidth-50)
-            
+        elseif mouseToTarget > target.radius then 
+            if score <= 0 then
+                score = 0
+            else
+                score = score - 1    
+            end
         end
     elseif button == 1 and gameState == 1 then
         timer = 10 -- onclick set timer to 10
