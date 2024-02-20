@@ -54,11 +54,13 @@ function love.draw()
     -- using the mouse : lesson 23
     love.graphics.setColor(1, 1, 1) -- color white
     love.graphics.setFont(gameFont)
-    love.graphics.print(score, 0, 0)
+    love.graphics.print("Score: " .. score, 5, 5)
     -- rounding up to the next int -> math.ceil
     -- rounding down to the next int -> math.floor
-    love.graphics.print(math.ceil(timer), 300, 0) 
-
+    love.graphics.print("Time: " ..  math.ceil(timer), 300, 5) 
+    if gameState == 1 then
+        love.graphics.printf("Click Anywhere to Begin!", 0 , 250, love.graphics.getWidth(), "center")
+    end
 
     if gameState == 2 then 
         --drawing the target 
