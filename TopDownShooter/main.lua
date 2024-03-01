@@ -33,10 +33,12 @@ end
 
 function love.draw()
     love.graphics.draw(sprites.background, 0, 0)
-    love.graphics.draw(sprites.player, player.x, player.y, playerMouseAngle, nil, nil, sprites.player:getWidth()/2, sprites.player:getHeight()/2) -- draw sprite
+    love.graphics.draw(sprites.player, player.x, player.y, playerMouseAngle(), nil, nil, sprites.player:getWidth()/2, sprites.player:getHeight()/2) -- draw sprite
 end
 
 function playerMouseAngle()
     -- radian rotation angle 
-    math.atan2( player.y - love.mouse.getY(), player.x - love.mouse.getX())
+    -- return math.atan2( player.y - love.mouse.getY(), player.x - love.mouse.getX())
+    return math.atan2( player.y - love.mouse.getY(), player.x - love.mouse.getX()) + math.pi
+
 end
