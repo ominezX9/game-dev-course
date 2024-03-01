@@ -11,6 +11,10 @@ function love.load()
     player.y = love.graphics.getHeight() / 2
     player.speed = 180 -- compensating for frame rate calc
 
+
+    --enemies
+    zombies = {}
+
     tempRotation = 0
 end
 
@@ -34,11 +38,38 @@ end
 function love.draw()
     love.graphics.draw(sprites.background, 0, 0)
     love.graphics.draw(sprites.player, player.x, player.y, playerMouseAngle(), nil, nil, sprites.player:getWidth()/2, sprites.player:getHeight()/2) -- draw sprite
+
+
+    for i,z in ipairs(zombies) do 
+        love.graphics.draw(sprites.zombie, z.x, z.y)
+    end
+
 end
+
+function love.keypressed(key)
+    if key == "space" then
+        spawnZombie()
+    end
+    
+end
+
 
 function playerMouseAngle()
     -- radian rotation angle 
     -- return math.atan2( player.y - love.mouse.getY(), player.x - love.mouse.getX())
     return math.atan2( player.y - love.mouse.getY(), player.x - love.mouse.getX()) + math.pi -- plus pi cause pi is nice
+
+end
+
+
+function  spawnZombie()
+    
+    local zombie = {} -- single instance of zombies
+    zombie.x = 300
+    zombie.y = 500
+    zombie.speed = 100
+
+    table.insert(zombies, zombie)
+
 
 end
