@@ -39,6 +39,6 @@ end
 function playerMouseAngle()
     -- radian rotation angle 
     -- return math.atan2( player.y - love.mouse.getY(), player.x - love.mouse.getX())
-    return math.atan2( player.y - love.mouse.getY(), player.x - love.mouse.getX()) + math.pi
+    return math.atan2( player.y - love.mouse.getY(), player.x - love.mouse.getX()) + math.pi -- plus pi cause pi is nice
 
 end
