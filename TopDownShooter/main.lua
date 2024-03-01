@@ -9,7 +9,7 @@ function love.load()
     player = {}
     player.x = love.graphics.getWidth() / 2
     player.y = love.graphics.getHeight() / 2
-    player.speed = 3
+    player.speed = 180 -- compensating for frame rate calc
 
 
 end
