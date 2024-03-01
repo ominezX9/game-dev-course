@@ -31,5 +31,5 @@ end
 
 function love.draw()
     love.graphics.draw(sprites.background, 0, 0)
-    love.graphics.draw(sprites.player, player.x, player.y) -- draw sprite
+    love.graphics.draw(sprites.player, player.x, player.y, math.pi/2, 1.57) -- draw sprite
 end
